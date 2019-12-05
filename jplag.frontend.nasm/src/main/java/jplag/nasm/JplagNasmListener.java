@@ -8,9 +8,9 @@ import org.antlr.v4.runtime.tree.TerminalNode;
 
 public class JplagNasmListener implements NasmListener, NasmTokenConstants {
 
-    private jplag.Nasm.Parser jplagParser;
+    private jplag.nasm.Parser jplagParser;
 
-    public JplagNasmListener(jplag.Nasm.Parser jplag) {
+    public JplagNasmListener(jplag.nasm.Parser jplag) {
         jplagParser = jplag;
     }
 
