@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>masm</artifactId>
+	<artifactId>nasm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<repositories>
@@ -48,7 +48,7 @@
 					<!-- Comma separated list of grammar files or pattern grammar files
 						By default, grammar file(s) is in ${basedir}/src/main/antlr -->
 					<!-- <grammars>*.g</grammars> -->
-					<grammars>masm.g4</grammars>
+					<grammars>Nasm.g4</grammars>
 				</configuration>
 				<executions>
 					<execution>
@@ -65,8 +65,8 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>jplag.masm.Parser</mainClass>
-							<packageName>jplag.masm</packageName>
+							<mainClass>jplag.nasm.Parser</mainClass>
+							<packageName>jplag.nasm</packageName>
 						</manifest>
 					</archive>
 				</configuration>

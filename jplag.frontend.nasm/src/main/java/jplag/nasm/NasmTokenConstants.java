@@ -1,6 +1,6 @@
-package jplag.masm;
+package jplag.nasm;
 
-public interface MasmTokenConstants extends jplag.TokenConstants {
+public interface NasmTokenConstants extends jplag.TokenConstants {
 
     final static int FILE_END = 0;
     final static int SEPARATOR_TOKEN = 1;

@@ -1,4 +1,4 @@
-package jplag.masm;
+package jplag.nasm;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -8,16 +8,16 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import jplag.Structure;
-import jplag.masm.grammar.MasmLexer;
-import jplag.masm.grammar.MasmParser;
-import jplag.mams.grammar.MasmParser.File_inputContext;
+import jplag.nasm.grammar.NasmLexer;
+import jplag.nasm.grammar.NasmParser;
+import jplag.nasm.grammar.NasmParser.File_inputContext;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
-public class Parser extends jplag.Parser implements MasmTokenConstants {
+public class Parser extends jplag.Parser implements NasmTokenConstants {
 
     private Structure struct = new Structure();
     private String currentFile;
@@ -43,8 +43,8 @@ public class Parser extends jplag.Parser implements MasmTokenConstants {
                         if (!first) {
                             System.out.println();
                         }
-                        MasmToken tok = (MasmToken) struct.tokens[token];
-                        System.out.print(MasmToken.type2string(tok.type) + " ("
+                        NasmToken tok = (NasmToken) struct.tokens[token];
+                        System.out.print(NasmToken.type2string(tok.type) + " ("
                                 + tok.getLine() + ","
                                 + tok.getColumn() + ","
                                 + tok.getLength() + ")\t");
@@ -73,7 +73,7 @@ public class Parser extends jplag.Parser implements MasmTokenConstants {
                 errors++;
             }
             System.gc();//Emeric
-            struct.addToken(new MasmToken(FILE_END, files[i], -1, -1, -1));
+            struct.addToken(new NasmToken(FILE_END, files[i], -1, -1, -1));
         }
         this.parseEnd();
         return struct;
@@ -89,19 +89,19 @@ public class Parser extends jplag.Parser implements MasmTokenConstants {
             input = new ANTLRInputStream(fis);
 
             // create a lexer that feeds off of input CharStream
-            MasmLexer lexer = new MasmLexer(input);
+            NasmLexer lexer = new NasmLexer(input);
 
             // create a buffer of tokens pulled from the lexer
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 
             // create a parser that feeds off the tokens buffer
-            MasmParser parser = new MasmParser(tokens);
+            NasmParser parser = new NasmParser(tokens);
             File_inputContext in = parser.file_input();
 
             ParseTreeWalker ptw = new ParseTreeWalker();
             for (int i = 0; i < in.getChildCount(); i++) {
                 ParseTree pt = in.getChild(i);
-                ptw.walk(new JplagMasmListener(this), pt);
+                ptw.walk(new JplagNasmListener(this), pt);
             }
 
         } catch (IOException e) {
@@ -113,11 +113,11 @@ public class Parser extends jplag.Parser implements MasmTokenConstants {
     }
 
     public void add(int type, org.antlr.v4.runtime.Token tok) {
-        struct.addToken(new MasmToken(type, (currentFile == null ? "null" : currentFile), tok.getLine(), tok.getCharPositionInLine() + 1,
+        struct.addToken(new NasmToken(type, (currentFile == null ? "null" : currentFile), tok.getLine(), tok.getCharPositionInLine() + 1,
                 tok.getText().length()));
     }
 
     public void addEnd(int type, org.antlr.v4.runtime.Token tok) {
-        struct.addToken(new MasmToken(type, (currentFile == null ? "null" : currentFile), tok.getLine(), struct.tokens[struct.size()-1].getColumn() + 1,0));
+        struct.addToken(new NasmToken(type, (currentFile == null ? "null" : currentFile), tok.getLine(), struct.tokens[struct.size()-1].getColumn() + 1,0));
     }
 }

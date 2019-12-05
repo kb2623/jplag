@@ -1,10 +1,10 @@
-package jplag.masm;
+package jplag.nasm;
 
-public class MasmToken extends jplag.Token implements MasmTokenConstants {
+public class NasmToken extends jplag.Token implements NasmTokenConstants {
 
     private int line, column, length;
 
-    public MasmToken(int type, String file, int line, int column, int length) {
+    public NasmToken(int type, String file, int line, int column, int length) {
         super(type, file, line, column, length);
     }
 
@@ -34,9 +34,9 @@ public class MasmToken extends jplag.Token implements MasmTokenConstants {
 
     public static String type2string(int type) {
         switch (type) {
-            case MasmTokenConstants.FILE_END:
+            case NasmTokenConstants.FILE_END:
                 return "********";
-            case MasmTokenConstants.SEPARATOR_TOKEN:
+            case NasmTokenConstants.SEPARATOR_TOKEN:
                 return "METHOD_SEPARATOR";
 
             case IMPORT:

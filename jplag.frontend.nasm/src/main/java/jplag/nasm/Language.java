@@ -1,4 +1,4 @@
-package jplag.masm;
+package jplag.nasm;
 
 import java.io.File;
 
@@ -6,10 +6,10 @@ import jplag.ProgramI;
 
 public class Language implements jplag.Language {
 
-    private jplag.masm.Parser parser;
+    private jplag.nasm.Parser parser;
 
     public Language(ProgramI program) {
-        this.parser = new jplag.masm.Parser();
+        this.parser = new jplag.nasm.Parser();
         this.parser.setProgram(program);
     }
 
@@ -23,11 +23,11 @@ public class Language implements jplag.Language {
     }
 
     public String name() {
-        return "MASM Parser";
+        return "Nasm Parser";
     }
 
     public String getShortName() {
-        return "masm";
+        return "nasm";
     }
 
     public int min_token_match() {
@@ -55,10 +55,10 @@ public class Language implements jplag.Language {
     }
 
     public int noOfTokens() {
-        return jplag.masm.MasmToken.numberOfTokens();
+        return jplag.nasm.NasmToken.numberOfTokens();
     }
 
     public String type2string(int type) {
-        return jplag.masm.MasmToken.type2string(type);
+        return jplag.nasm.NasmToken.type2string(type);
     }
 }

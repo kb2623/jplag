@@ -19,10 +19,10 @@
 		<module>jplag.frontend.java-1.7</module>
 		<module>jplag.frontend.java-1.9</module>
 		<module>jplag.frontend.python-3</module>
-		<module>jplag.frontend.masm</module>
-		<module>jplag.frontend.nasm</module>
 		<module>jplag.frontend.scheme</module>
 		<module>jplag.frontend.text</module>
+		<module>jplag.frontend.masm</module>
+		<module>jplag.frontend.nasm</module>
 		<module>jplag.utils</module>
 		<module>jplag</module>
 	</modules>

@@ -48,7 +48,7 @@
 					<!-- Comma separated list of grammar files or pattern grammar files
 						By default, grammar file(s) is in ${basedir}/src/main/antlr -->
 					<!-- <grammars>*.g</grammars> -->
-					<grammars>masm.g4</grammars>
+					<grammars>Masm.g4</grammars>
 				</configuration>
 				<executions>
 					<execution>

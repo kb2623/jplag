@@ -9,10 +9,8 @@ to provide the necessary tokens for the parser.
 /*
     Ported to Antlr4 by Tom Everett <tom@khubla.com>
 */
-grammar masm;
-@ header{ 
- 	 package jplag.masm;
- 	 }
+grammar Nasm;
+
 compilationUnit
    : (segments | directive_exp1)* 'end' Identifier
    ;
