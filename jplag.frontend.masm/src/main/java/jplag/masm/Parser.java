@@ -10,7 +10,6 @@ import java.io.IOException;
 import jplag.Structure;
 import jplag.masm.grammar.MasmLexer;
 import jplag.masm.grammar.MasmParser;
-import jplag.mams.grammar.MasmParser.File_inputContext;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;

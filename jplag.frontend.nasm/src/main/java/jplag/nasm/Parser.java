@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import jplag.Structure;
+
 import jplag.nasm.grammar.NasmLexer;
 import jplag.nasm.grammar.NasmParser;
 import jplag.nasm.grammar.NasmParser.File_inputContext;

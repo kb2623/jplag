@@ -1,8 +1,58 @@
 package jplag.masm;
 
-import jplag.masm.grammar.*;
+import jplag.masm.grammar.MasmListener;
+import jplag.masm.grammar.MasmParser.BContext;
+import jplag.masm.grammar.MasmParser.Binary_exp10Context;
+import jplag.masm.grammar.MasmParser.Binary_exp11Context;
+import jplag.masm.grammar.MasmParser.Binary_exp12Context;
+import jplag.masm.grammar.MasmParser.Binary_exp1Context;
+import jplag.masm.grammar.MasmParser.Binary_exp2Context;
+import jplag.masm.grammar.MasmParser.Binary_exp3Context;
+import jplag.masm.grammar.MasmParser.Binary_exp4Context;
+import jplag.masm.grammar.MasmParser.Binary_exp5Context;
+import jplag.masm.grammar.MasmParser.Binary_exp6Context;
+import jplag.masm.grammar.MasmParser.Binary_exp7Context;
+import jplag.masm.grammar.MasmParser.Binary_exp8Context;
+import jplag.masm.grammar.MasmParser.Binary_exp9Context;
+import jplag.masm.grammar.MasmParser.CallContext;
+import jplag.masm.grammar.MasmParser.CodeContext;
+import jplag.masm.grammar.MasmParser.CompilationUnitContext;
+import jplag.masm.grammar.MasmParser.Directive_exp1Context;
+import jplag.masm.grammar.MasmParser.DirectivesContext;
+import jplag.masm.grammar.MasmParser.InContext;
+import jplag.masm.grammar.MasmParser.InterruptionContext;
+import jplag.masm.grammar.MasmParser.LContext;
+import jplag.masm.grammar.MasmParser.MemoryContext;
+import jplag.masm.grammar.MasmParser.NotargumentsContext;
+import jplag.masm.grammar.MasmParser.OContext;
+import jplag.masm.grammar.MasmParser.OpContext;
+import jplag.masm.grammar.MasmParser.OpeContext;
+import jplag.masm.grammar.MasmParser.OperContext;
+import jplag.masm.grammar.MasmParser.OperaContext;
+import jplag.masm.grammar.MasmParser.OperatContext;
+import jplag.masm.grammar.MasmParser.OperatoContext;
+import jplag.masm.grammar.MasmParser.OperatorContext;
+import jplag.masm.grammar.MasmParser.OutContext;
+import jplag.masm.grammar.MasmParser.ProcContext;
+import jplag.masm.grammar.MasmParser.QuestionContext;
+import jplag.masm.grammar.MasmParser.ReContext;
+import jplag.masm.grammar.MasmParser.RegisterContext;
+import jplag.masm.grammar.MasmParser.SContext;
+import jplag.masm.grammar.MasmParser.SegmentosContext;
+import jplag.masm.grammar.MasmParser.SegmentsContext;
+import jplag.masm.grammar.MasmParser.ShContext;
+import jplag.masm.grammar.MasmParser.TimeContext;
+import jplag.masm.grammar.MasmParser.TyContext;
+import jplag.masm.grammar.MasmParser.Unuary_exp1Context;
+import jplag.masm.grammar.MasmParser.Unuary_exp2Context;
+import jplag.masm.grammar.MasmParser.Unuary_exp3Context;
+import jplag.masm.grammar.MasmParser.Unuary_exp4Context;
+import jplag.masm.grammar.MasmParser.Unuary_exp5Context;
+import jplag.masm.grammar.MasmParser.VariabledeclarationContext;
+import jplag.masm.grammar.MasmParser.XContext;
+
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.misc.NotNull;
+// import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
@@ -15,748 +65,615 @@ public class JplagMasmListener implements MasmListener, MasmTokenConstants {
     }
 
     @Override
-    public void enterTestlist(@NotNull MasmParser.TestlistContext ctx) {
-    }
+    public void visitTerminal(TerminalNode node) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTestlist(@NotNull MasmParser.TestlistContext ctx) {
     }
 
     @Override
-    public void enterAssert_stmt(@NotNull MasmParser.Assert_stmtContext ctx) {
-        jplagParser.add(ASSERT, ctx.getStart());
-    }
+    public void visitErrorNode(ErrorNode node) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitAssert_stmt(@NotNull MasmParser.Assert_stmtContext ctx) {
     }
 
     @Override
-    public void enterArgument(@NotNull MasmParser.ArgumentContext ctx) {
-    }
+    public void enterEveryRule(ParserRuleContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitArgument(@NotNull MasmParser.ArgumentContext ctx) {
     }
 
     @Override
-    public void enterNot_test(@NotNull MasmParser.Not_testContext ctx) {
-    }
+    public void exitEveryRule(ParserRuleContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitNot_test(@NotNull MasmParser.Not_testContext ctx) {
     }
 
     @Override
-    public void enterFile_input(@NotNull MasmParser.File_inputContext ctx) {
-    }
+    public void enterOpera(OperaContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitFile_input(@NotNull MasmParser.File_inputContext ctx) {
     }
 
     @Override
-    public void enterXor_expr(@NotNull MasmParser.Xor_exprContext ctx) {
-    }
+    public void exitOpera(OperaContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitXor_expr(@NotNull MasmParser.Xor_exprContext ctx) {
     }
 
     @Override
-    public void enterImport_from(@NotNull MasmParser.Import_fromContext ctx) {
-    }
+    public void enterTy(TyContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitImport_from(@NotNull MasmParser.Import_fromContext ctx) {
     }
 
     @Override
-    public void enterSingle_input(@NotNull MasmParser.Single_inputContext ctx) {
-    }
+    public void exitTy(TyContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitSingle_input(@NotNull MasmParser.Single_inputContext ctx) {
     }
 
     @Override
-    public void enterDecorated(@NotNull MasmParser.DecoratedContext ctx) {
-        jplagParser.add(DEC_BEGIN, ctx.getStart());
-    }
+    public void enterBinary_exp12(Binary_exp12Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitDecorated(@NotNull MasmParser.DecoratedContext ctx) {
-        jplagParser.addEnd(DEC_END, ctx.getStart());
     }
 
     @Override
-    public void enterWith_item(@NotNull MasmParser.With_itemContext ctx) {
-    }
+    public void exitBinary_exp12(Binary_exp12Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitWith_item(@NotNull MasmParser.With_itemContext ctx) {
     }
 
     @Override
-    public void enterRaise_stmt(@NotNull MasmParser.Raise_stmtContext ctx) {
-        jplagParser.add(RAISE, ctx.getStart());
-    }
+    public void enterOperator(OperatorContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitRaise_stmt(@NotNull MasmParser.Raise_stmtContext ctx) {
     }
 
     @Override
-    public void enterImport_as_name(@NotNull MasmParser.Import_as_nameContext ctx) {
-    }
+    public void exitOperator(OperatorContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitImport_as_name(@NotNull MasmParser.Import_as_nameContext ctx) {
     }
 
     @Override
-    public void enterExcept_clause(@NotNull MasmParser.Except_clauseContext ctx) {
-        jplagParser.add(EXCEPT_BEGIN, ctx.getStart());
-    }
+    public void enterNotarguments(NotargumentsContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitExcept_clause(@NotNull MasmParser.Except_clauseContext ctx) {
-        jplagParser.addEnd(EXCEPT_END, ctx.getStart());
     }
 
     @Override
-    public void enterCompound_stmt(@NotNull MasmParser.Compound_stmtContext ctx) {
-    }
+    public void exitNotarguments(NotargumentsContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitCompound_stmt(@NotNull MasmParser.Compound_stmtContext ctx) {
     }
 
     @Override
-    public void enterAnd_expr(@NotNull MasmParser.And_exprContext ctx) {
-    }
+    public void enterOpe(OpeContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitAnd_expr(@NotNull MasmParser.And_exprContext ctx) {
     }
 
     @Override
-    public void enterLambdef_nocond(@NotNull MasmParser.Lambdef_nocondContext ctx) {
-    }
+    public void exitOpe(OpeContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitLambdef_nocond(@NotNull MasmParser.Lambdef_nocondContext ctx) {
     }
 
     @Override
-    public void enterDictorsetmaker(@NotNull MasmParser.DictorsetmakerContext ctx) {
-        jplagParser.add(ARRAY, ctx.getStart());
-    }
+    public void enterIn(InContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitDictorsetmaker(@NotNull MasmParser.DictorsetmakerContext ctx) {
     }
 
     @Override
-    public void enterReturn_stmt(@NotNull MasmParser.Return_stmtContext ctx) {
-        jplagParser.add(RETURN, ctx.getStart());
-    }
+    public void exitIn(InContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitReturn_stmt(@NotNull MasmParser.Return_stmtContext ctx) {
     }
 
     @Override
-    public void enterDotted_name(@NotNull MasmParser.Dotted_nameContext ctx) {
-    }
+    public void enterSegmentos(SegmentosContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitDotted_name(@NotNull MasmParser.Dotted_nameContext ctx) {
     }
 
     @Override
-    public void enterFlow_stmt(@NotNull MasmParser.Flow_stmtContext ctx) {
-    }
+    public void exitSegmentos(SegmentosContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitFlow_stmt(@NotNull MasmParser.Flow_stmtContext ctx) {
     }
 
     @Override
-    public void enterWhile_stmt(@NotNull MasmParser.While_stmtContext ctx) {
-        jplagParser.add(WHILE_BEGIN, ctx.getStart());
-    }
+    public void enterUnuary_exp2(Unuary_exp2Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitWhile_stmt(@NotNull MasmParser.While_stmtContext ctx) {
-        jplagParser.addEnd(WHILE_END, ctx.getStart());
     }
 
     @Override
-    public void enterOr_test(@NotNull MasmParser.Or_testContext ctx) {
-    }
+    public void exitUnuary_exp2(Unuary_exp2Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitOr_test(@NotNull MasmParser.Or_testContext ctx) {
     }
 
     @Override
-    public void enterComparison(@NotNull MasmParser.ComparisonContext ctx) {
-    }
+    public void enterUnuary_exp3(Unuary_exp3Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitComparison(@NotNull MasmParser.ComparisonContext ctx) {
     }
 
     @Override
-    public void enterTest(@NotNull MasmParser.TestContext ctx) {
-    }
+    public void exitUnuary_exp3(Unuary_exp3Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTest(@NotNull MasmParser.TestContext ctx) {
     }
 
     @Override
-    public void enterSubscript(@NotNull MasmParser.SubscriptContext ctx) {
-    }
+    public void enterUnuary_exp4(Unuary_exp4Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitSubscript(@NotNull MasmParser.SubscriptContext ctx) {
     }
 
     @Override
-    public void enterComp_for(@NotNull MasmParser.Comp_forContext ctx) {
-    }
+    public void exitUnuary_exp4(Unuary_exp4Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitComp_for(@NotNull MasmParser.Comp_forContext ctx) {
     }
 
     @Override
-    public void enterYield_arg(@NotNull MasmParser.Yield_argContext ctx) {
-        jplagParser.add(YIELD, ctx.getStart());
-    }
+    public void enterCompilationUnit(CompilationUnitContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitYield_arg(@NotNull MasmParser.Yield_argContext ctx) {
     }
 
     @Override
-    public void enterYield_expr(@NotNull MasmParser.Yield_exprContext ctx) {
-    }
+    public void exitCompilationUnit(CompilationUnitContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitYield_expr(@NotNull MasmParser.Yield_exprContext ctx) {
     }
 
     @Override
-    public void enterImport_stmt(@NotNull MasmParser.Import_stmtContext ctx) {
-        jplagParser.add(IMPORT, ctx.getStart());
-    }
+    public void enterUnuary_exp5(Unuary_exp5Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitImport_stmt(@NotNull MasmParser.Import_stmtContext ctx) {
     }
 
     @Override
-    public void enterShift_expr(@NotNull MasmParser.Shift_exprContext ctx) {
-    }
+    public void exitUnuary_exp5(Unuary_exp5Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitShift_expr(@NotNull MasmParser.Shift_exprContext ctx) {
     }
 
     @Override
-    public void enterLambdef(@NotNull MasmParser.LambdefContext ctx) {
-        jplagParser.add(LAMBDA, ctx.getStart());
-    }
+    public void enterRe(ReContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitLambdef(@NotNull MasmParser.LambdefContext ctx) {
     }
 
     @Override
-    public void enterAnd_test(@NotNull MasmParser.And_testContext ctx) {
-    }
+    public void exitRe(ReContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitAnd_test(@NotNull MasmParser.And_testContext ctx) {
     }
 
     @Override
-    public void enterGlobal_stmt(@NotNull MasmParser.Global_stmtContext ctx) {
-    }
+    public void enterVariabledeclaration(VariabledeclarationContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitGlobal_stmt(@NotNull MasmParser.Global_stmtContext ctx) {
     }
 
     @Override
-    public void enterImport_as_names(@NotNull MasmParser.Import_as_namesContext ctx) {
-    }
+    public void exitVariabledeclaration(VariabledeclarationContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitImport_as_names(@NotNull MasmParser.Import_as_namesContext ctx) {
     }
 
     @Override
-    public void enterDecorators(@NotNull MasmParser.DecoratorsContext ctx) {
-    }
+    public void enterOperato(OperatoContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitDecorators(@NotNull MasmParser.DecoratorsContext ctx) {
     }
 
     @Override
-    public void enterTry_stmt(@NotNull MasmParser.Try_stmtContext ctx) {
-        jplagParser.add(TRY_BEGIN, ctx.getStart());
-    }
+    public void exitOperato(OperatoContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTry_stmt(@NotNull MasmParser.Try_stmtContext ctx) {
     }
 
     @Override
-    public void enterComp_op(@NotNull MasmParser.Comp_opContext ctx) {
-    }
+    public void enterUnuary_exp1(Unuary_exp1Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitComp_op(@NotNull MasmParser.Comp_opContext ctx) {
     }
 
     @Override
-    public void enterStar_expr(@NotNull MasmParser.Star_exprContext ctx) {
-    }
+    public void exitUnuary_exp1(Unuary_exp1Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitStar_expr(@NotNull MasmParser.Star_exprContext ctx) {
     }
 
     @Override
-    public void enterBreak_stmt(@NotNull MasmParser.Break_stmtContext ctx) {
-        jplagParser.add(BREAK, ctx.getStart());
-    }
+    public void enterOperat(OperatContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitBreak_stmt(@NotNull MasmParser.Break_stmtContext ctx) {
     }
 
     @Override
-    public void enterParameters(@NotNull MasmParser.ParametersContext ctx) {
-    }
+    public void exitOperat(OperatContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitParameters(@NotNull MasmParser.ParametersContext ctx) {
     }
 
     @Override
-    public void enterDecorator(@NotNull MasmParser.DecoratorContext ctx) {
-    }
+    public void enterCode(CodeContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitDecorator(@NotNull MasmParser.DecoratorContext ctx) {
     }
 
     @Override
-    public void enterTfpdef(@NotNull MasmParser.TfpdefContext ctx) {
-    }
+    public void exitCode(CodeContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTfpdef(@NotNull MasmParser.TfpdefContext ctx) {
     }
 
     @Override
-    public void enterTestlist_comp(@NotNull MasmParser.Testlist_compContext ctx) {
-        if (ctx.getText().contains(",")) {
-            jplagParser.add(ARRAY, ctx.getStart());
-        }
-    }
+    public void enterMemory(MemoryContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTestlist_comp(@NotNull MasmParser.Testlist_compContext ctx) {
     }
 
     @Override
-    public void enterIf_stmt(@NotNull MasmParser.If_stmtContext ctx) {
-        jplagParser.add(IF_BEGIN, ctx.getStart());
-    }
+    public void exitMemory(MemoryContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitIf_stmt(@NotNull MasmParser.If_stmtContext ctx) {
-        jplagParser.addEnd(IF_END, ctx.getStart());
     }
 
     @Override
-    public void enterWith_stmt(@NotNull MasmParser.With_stmtContext ctx) {
-        jplagParser.add(WITH_BEGIN, ctx.getStart());
-    }
+    public void enterSegments(SegmentsContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitWith_stmt(@NotNull MasmParser.With_stmtContext ctx) {
-        jplagParser.addEnd(WITH_END, ctx.getStart());
     }
 
     @Override
-    public void enterClassdef(@NotNull MasmParser.ClassdefContext ctx) {
-        jplagParser.add(CLASS_BEGIN, ctx.getStart());
-    }
+    public void exitSegments(SegmentsContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitClassdef(@NotNull MasmParser.ClassdefContext ctx) {
-        jplagParser.addEnd(CLASS_END, ctx.getStart());
     }
 
     @Override
-    public void enterExprlist(@NotNull MasmParser.ExprlistContext ctx) {
-    }
+    public void enterOut(OutContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitExprlist(@NotNull MasmParser.ExprlistContext ctx) {
     }
 
     @Override
-    public void enterSmall_stmt(@NotNull MasmParser.Small_stmtContext ctx) {
-    }
+    public void exitOut(OutContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitSmall_stmt(@NotNull MasmParser.Small_stmtContext ctx) {
     }
 
     @Override
-    public void enterTrailer(@NotNull MasmParser.TrailerContext ctx) {
-        if (ctx.getText().charAt(0)=='(') {
-            jplagParser.add(APPLY, ctx.getStart());
-        } else {
-            jplagParser.add(ARRAY, ctx.getStart());
-        }
-    }
+    public void enterSh(ShContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTrailer(@NotNull MasmParser.TrailerContext ctx) {
     }
 
     @Override
-    public void enterDotted_as_names(@NotNull MasmParser.Dotted_as_namesContext ctx) {
-    }
+    public void exitSh(ShContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitDotted_as_names(@NotNull MasmParser.Dotted_as_namesContext ctx) {
     }
 
     @Override
-    public void enterArith_expr(@NotNull MasmParser.Arith_exprContext ctx) {
-    }
+    public void enterOp(OpContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitArith_expr(@NotNull MasmParser.Arith_exprContext ctx) {
     }
 
     @Override
-    public void enterArglist(@NotNull MasmParser.ArglistContext ctx) {
-    }
+    public void exitOp(OpContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitArglist(@NotNull MasmParser.ArglistContext ctx) {
     }
 
     @Override
-    public void enterSimple_stmt(@NotNull MasmParser.Simple_stmtContext ctx) {
-    }
+    public void enterProc(ProcContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitSimple_stmt(@NotNull MasmParser.Simple_stmtContext ctx) {
     }
 
     @Override
-    public void enterTypedargslist(@NotNull MasmParser.TypedargslistContext ctx) {
-    }
+    public void exitProc(ProcContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTypedargslist(@NotNull MasmParser.TypedargslistContext ctx) {
     }
 
     @Override
-    public void enterExpr(@NotNull MasmParser.ExprContext ctx) {
-    }
+    public void enterBinary_exp1(Binary_exp1Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitExpr(@NotNull MasmParser.ExprContext ctx) {
     }
 
     @Override
-    public void enterTerm(@NotNull MasmParser.TermContext ctx) {
-    }
+    public void exitBinary_exp1(Binary_exp1Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTerm(@NotNull MasmParser.TermContext ctx) {
     }
 
     @Override
-    public void enterPower(@NotNull MasmParser.PowerContext ctx) {
-    }
+    public void enterB(BContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitPower(@NotNull MasmParser.PowerContext ctx) {
     }
 
     @Override
-    public void enterDotted_as_name(@NotNull MasmParser.Dotted_as_nameContext ctx) {
-    }
+    public void exitB(BContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitDotted_as_name(@NotNull MasmParser.Dotted_as_nameContext ctx) {
     }
 
     @Override
-    public void enterFactor(@NotNull MasmParser.FactorContext ctx) {
-    }
+    public void enterBinary_exp2(Binary_exp2Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitFactor(@NotNull MasmParser.FactorContext ctx) {
     }
 
     @Override
-    public void enterSliceop(@NotNull MasmParser.SliceopContext ctx) {
-    }
+    public void exitBinary_exp2(Binary_exp2Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitSliceop(@NotNull MasmParser.SliceopContext ctx) {
     }
 
     @Override
-    public void enterFuncdef(@NotNull MasmParser.FuncdefContext ctx) {
-        jplagParser.add(METHOD_BEGIN, ctx.getStart());
-    }
+    public void enterBinary_exp3(Binary_exp3Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitFuncdef(@NotNull MasmParser.FuncdefContext ctx) {
-        jplagParser.addEnd(METHOD_END, ctx.getStart());
     }
 
     @Override
-    public void enterSubscriptlist(@NotNull MasmParser.SubscriptlistContext ctx) {
-    }
+    public void exitBinary_exp3(Binary_exp3Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitSubscriptlist(@NotNull MasmParser.SubscriptlistContext ctx) {
     }
 
     @Override
-    public void enterTest_nocond(@NotNull MasmParser.Test_nocondContext ctx) {
-    }
+    public void enterQuestion(QuestionContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitTest_nocond(@NotNull MasmParser.Test_nocondContext ctx) {
     }
 
     @Override
-    public void enterComp_iter(@NotNull MasmParser.Comp_iterContext ctx) {
-    }
+    public void exitQuestion(QuestionContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitComp_iter(@NotNull MasmParser.Comp_iterContext ctx) {
     }
 
     @Override
-    public void enterNonlocal_stmt(@NotNull MasmParser.Nonlocal_stmtContext ctx) {
-    }
+    public void enterBinary_exp4(Binary_exp4Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitNonlocal_stmt(@NotNull MasmParser.Nonlocal_stmtContext ctx) {
     }
 
     @Override
-    public void enterEval_input(@NotNull MasmParser.Eval_inputContext ctx) {
-    }
+    public void exitBinary_exp4(Binary_exp4Context ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitEval_input(@NotNull MasmParser.Eval_inputContext ctx) {
     }
 
     @Override
-    public void enterVfpdef(@NotNull MasmParser.VfpdefContext ctx) {
-    }
+    public void enterDirectives(DirectivesContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitVfpdef(@NotNull MasmParser.VfpdefContext ctx) {
     }
 
     @Override
-    public void enterImport_name(@NotNull MasmParser.Import_nameContext ctx) {
-    }
+    public void exitDirectives(DirectivesContext ctx) {
+        // TODO Auto-generated method stub
 
-    @Override
-    public void exitImport_name(@NotNull MasmParser.Import_nameContext ctx) {
     }
 
     @Override
-    public void enterComp_if(@NotNull MasmParser.Comp_ifContext ctx) {
+    public void enterBinary_exp5(Binary_exp5Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitComp_if(@NotNull MasmParser.Comp_ifContext ctx) {
+    public void exitBinary_exp5(Binary_exp5Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterAugassign(@NotNull MasmParser.AugassignContext ctx) {
-        jplagParser.add(ASSIGN, ctx.getStart());
+    public void enterBinary_exp6(Binary_exp6Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitAugassign(@NotNull MasmParser.AugassignContext ctx) {
+    public void exitBinary_exp6(Binary_exp6Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterPass_stmt(@NotNull MasmParser.Pass_stmtContext ctx) {
+    public void enterBinary_exp7(Binary_exp7Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitPass_stmt(@NotNull MasmParser.Pass_stmtContext ctx) {
+    public void exitBinary_exp7(Binary_exp7Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterExpr_stmt(@NotNull MasmParser.Expr_stmtContext ctx) {
+    public void enterBinary_exp8(Binary_exp8Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitExpr_stmt(@NotNull MasmParser.Expr_stmtContext ctx) {
+    public void exitBinary_exp8(Binary_exp8Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterYield_stmt(@NotNull MasmParser.Yield_stmtContext ctx) {
-        jplagParser.add(YIELD, ctx.getStart());
+    public void enterBinary_exp9(Binary_exp9Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitYield_stmt(@NotNull MasmParser.Yield_stmtContext ctx) {
+    public void exitBinary_exp9(Binary_exp9Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterSuite(@NotNull MasmParser.SuiteContext ctx) {
+    public void enterL(LContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitSuite(@NotNull MasmParser.SuiteContext ctx) {
+    public void exitL(LContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterContinue_stmt(@NotNull MasmParser.Continue_stmtContext ctx) {
-        jplagParser.add(CONTINUE, ctx.getStart());
+    public void enterO(OContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitContinue_stmt(@NotNull MasmParser.Continue_stmtContext ctx) {
+    public void exitO(OContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterTestlist_star_expr(@NotNull MasmParser.Testlist_star_exprContext ctx) {
+    public void enterCall(CallContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitTestlist_star_expr(@NotNull MasmParser.Testlist_star_exprContext ctx) {
+    public void exitCall(CallContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterVarargslist(@NotNull MasmParser.VarargslistContext ctx) {
+    public void enterS(SContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitVarargslist(@NotNull MasmParser.VarargslistContext ctx) {
+    public void exitS(SContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterFor_stmt(@NotNull MasmParser.For_stmtContext ctx) {
-        jplagParser.add(FOR_BEGIN, ctx.getStart());
+    public void enterBinary_exp11(Binary_exp11Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitFor_stmt(@NotNull MasmParser.For_stmtContext ctx) {
-        jplagParser.addEnd(FOR_END, ctx.getStart());
+    public void exitBinary_exp11(Binary_exp11Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterDel_stmt(@NotNull MasmParser.Del_stmtContext ctx) {
-        jplagParser.add(DEL, ctx.getStart());
+    public void enterX(XContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitDel_stmt(@NotNull MasmParser.Del_stmtContext ctx) {
+    public void exitX(XContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterAtom(@NotNull MasmParser.AtomContext ctx) {
+    public void enterBinary_exp10(Binary_exp10Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitAtom(@NotNull MasmParser.AtomContext ctx) {
+    public void exitBinary_exp10(Binary_exp10Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterStmt(@NotNull MasmParser.StmtContext ctx) {
+    public void enterInterruption(InterruptionContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitStmt(@NotNull MasmParser.StmtContext ctx) {
+    public void exitInterruption(InterruptionContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void enterEveryRule(@NotNull ParserRuleContext ctx) {
+    public void enterDirective_exp1(Directive_exp1Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void exitEveryRule(@NotNull ParserRuleContext ctx) {
+    public void exitDirective_exp1(Directive_exp1Context ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void visitTerminal(@NotNull TerminalNode node) {
-        if (node.getText().equals("=")) {
-            jplagParser.add(ASSIGN, node.getSymbol());
-        } else if (node.getText().equals("finally")) {
-            jplagParser.add(FINALLY, node.getSymbol());
-        }
+    public void enterOper(OperContext ctx) {
+        // TODO Auto-generated method stub
+
     }
 
     @Override
-    public void visitErrorNode(@NotNull ErrorNode node) {
-    }
+    public void exitOper(OperContext ctx) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void enterAnnassign(MasmParser.AnnassignContext ctx) {
-	}
+    }
 
-	@Override
-	public void exitAnnassign(MasmParser.AnnassignContext ctx) {
-	}
+    @Override
+    public void enterTime(TimeContext ctx) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void enterEncoding_decl(MasmParser.Encoding_declContext ctx) {
-	}
+    }
 
-	@Override
-	public void exitEncoding_decl(MasmParser.Encoding_declContext ctx) {
-	}
+    @Override
+    public void exitTime(TimeContext ctx) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void enterAtom_expr(MasmParser.Atom_exprContext ctx) {
-	}
+    }
 
-	@Override
-	public void exitAtom_expr(MasmParser.Atom_exprContext ctx) {
-	}
+    @Override
+    public void enterRegister(RegisterContext ctx) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void enterAsync_funcdef(MasmParser.Async_funcdefContext ctx) {
-	}
+    }
 
-	@Override
-	public void exitAsync_funcdef(MasmParser.Async_funcdefContext ctx) {
-	}
+    @Override
+    public void exitRegister(RegisterContext ctx) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void enterAsync_stmt(MasmParser.Async_stmtContext ctx) {
-	}
+    }
 
-	@Override
-	public void exitAsync_stmt(MasmParser.Async_stmtContext ctx) {
-	}
 }

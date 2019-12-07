@@ -11,6 +11,10 @@ to provide the necessary tokens for the parser.
 */
 grammar Masm;
 
+header {
+   package jplag.masm.grammar;
+}
+
 compilationUnit
    : (segments | directive_exp1)* 'end' Identifier
    ;
