@@ -5,10 +5,6 @@
 */
 grammar Nasm;
 
-header {
-   package jplag.nasm.grammar;
-}
-
 compilationUnit
    : (segments | directive_exp1)* 'end' Identifier
    ;
